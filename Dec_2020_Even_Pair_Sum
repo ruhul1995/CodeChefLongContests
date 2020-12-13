@@ -1,0 +1,50 @@
+//Kotlin Code : Learning Purpose Only (Note : If using this code to submit, please use some other language to submit)
+//Developer : Ruhul Amin Choudhury
+//Date : 06th December 2020
+//Time : 04:32 PM
+//Solution : Accepted In Codechef
+
+import java.util.*;
+
+fun main(args:Array<String>)
+    {
+        val input = Scanner(System.`in`)
+        val testcase = input.nextInt()
+        for(i in 1..testcase)
+        {
+            var A = input.nextLong()
+            var B = input.nextLong()
+
+          
+            var A_even_num = 0L
+            var A_odd_num = 0L
+            var B_even_num = 0L
+            var B_odd_num = 0L
+            var ans = 0L
+            
+            if( A % 2 == 0L)
+            {
+                A_even_num = A/2
+                A_odd_num = (A/2)
+            }
+            else
+            {
+                A_even_num = A/2
+                A_odd_num = (A/2) + 1
+            }
+
+            if(B % 2 == 0L)
+            {
+                B_even_num = B/2
+                B_odd_num = B/2
+            }
+            else
+            {
+                B_even_num = B/2
+                B_odd_num = B/2 + 1
+            }
+
+            ans = (A_even_num * B_even_num) + (A_odd_num * B_odd_num)
+            println(ans)
+        }
+    }

@@ -1,0 +1,41 @@
+//Kotlin Code : Learning Purpose Only (Note : If using this code to submit, please use some other language to submit)
+//Developer : Ruhul Amin Choudhury
+//Date : 11th December 2020
+//Time : 12:24 AM
+//Solution : Accepted In Codechef
+
+import java.util.*;
+
+fun main(args:Array<String>)
+{
+    var input = Scanner(System.`in`)
+
+    var D1 = input.nextInt()
+    var V1 = input.nextInt()
+    var D2 = input.nextInt()
+    var V2 = input.nextInt()
+    var P = input.nextInt()
+    
+    //logic
+    
+    var days = 1 //answer
+    var TotalVaccine = 0
+    
+
+    while(true)
+    {
+        if( days >= D1 )
+            TotalVaccine = TotalVaccine + V1
+        
+        if(TotalVaccine >= P)
+            break;
+        if( days >= D2 )
+            TotalVaccine = TotalVaccine + V2
+        
+        if(TotalVaccine >= P)
+            break;
+
+        days++
+    }
+    println(days)
+}

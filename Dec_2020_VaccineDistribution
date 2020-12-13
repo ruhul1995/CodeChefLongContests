@@ -1,0 +1,60 @@
+//Kotlin Code : Learning Purpose Only (Note : If using this code to submit, please use some other language to submit)
+//Developer : Ruhul Amin Choudhury
+//Date : 13th December 2020
+//Time : 15:21
+//Solution : Accepted In Codechef
+
+import java.util.*
+
+    fun main(args:Array<String>)
+    {
+        var input = Scanner(System.`in`)
+
+        //Reading Input
+        var Testcase = input.nextInt()
+
+        for (i in 1..Testcase)
+        {
+            var N = input.nextInt()
+            var K = input.nextInt()
+
+            //array declaration
+            var arrN = Array<Int>(N){0}
+            //var arrN = arrayOf(N)
+            //println(arrN.size)
+            for(j in 0 until N)
+                arrN[j] = input.nextInt()
+
+            var RiskPeople = 0
+            var RPDays = 0
+            var NotRiskPeople = 0
+            var NRPDays = 0
+            var TotalDays = 0
+
+            for(k in 0 until N)
+            {
+                if( arrN[k] >= 80 || arrN[k] <= 9)
+                {
+                    //people are at risk
+                    RiskPeople++
+                }
+                else
+                    NotRiskPeople++ // People are not at risk
+            }
+
+            RPDays = if( RiskPeople % K == 0)
+                RiskPeople/K
+            else
+                RiskPeople/K + 1
+
+            NRPDays = if( NotRiskPeople % K == 0)
+                NotRiskPeople/K
+            else
+                NotRiskPeople/K + 1
+
+            TotalDays = RPDays + NRPDays
+
+            println(TotalDays)
+        }
+    }
+

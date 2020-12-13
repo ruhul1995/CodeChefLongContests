@@ -1,6 +1,7 @@
 # CodeChefLongContests 
+| My LongContest Solution Of CodeChef |
 # Category   
-|My LongContest Solution Of CodeChef | Learning Purpose Only!!
+| Learning Purpose Only |
 # Difficulty 
 | DependsOnCoderStrength |
 # Developer  

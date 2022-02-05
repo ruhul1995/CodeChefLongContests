@@ -1,0 +1,56 @@
+import java.util.*
+
+fun main( args: Array<String>)
+{
+    val input = Scanner(System.`in`)
+    val testcase = input.nextInt()
+
+    for(start in 1..testcase)
+    {
+        var dragon_dsa = input.nextInt()
+        var dragon_toc = input.nextInt()
+        var dragon_dm = input.nextInt()
+        var sloth_dsa = input.nextInt()
+        var sloth_toc = input.nextInt()
+        var sloth_dm = input.nextInt()
+
+        var dragon_totalScore = dragon_dsa + dragon_toc + dragon_dm
+        var sloth_totalScore = sloth_dsa + sloth_toc + sloth_dm
+
+        if(dragon_totalScore > sloth_totalScore)
+        {
+            println("Dragon")
+        }
+        else if(dragon_totalScore == sloth_totalScore)
+        {
+            if(dragon_dsa > sloth_dsa)
+            {
+                println("Dragon")
+            }
+            else if(dragon_dsa == sloth_dsa)
+            {
+                if(dragon_toc > sloth_toc)
+                {
+                    println("Dragon")
+                }
+                else if(dragon_toc == sloth_toc)
+                {
+                    println("Tie")
+                }
+                else
+                {
+                    println("Sloth")
+                }
+            }
+            else
+            {
+                println("Sloth")
+            }
+
+        }
+        else
+        {
+            println("Sloth")
+        }
+    }
+}

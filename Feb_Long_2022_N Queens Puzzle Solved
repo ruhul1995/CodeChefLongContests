@@ -1,0 +1,21 @@
+import java.util.*
+import kotlin.math.floor
+import kotlin.math.pow
+
+fun main(args: Array<String>)
+{
+    var input = Scanner(System.`in`)
+    var testcase = input.nextInt()
+
+    for(start in 1..testcase)
+    {
+        var N = input.nextInt()
+
+        var ans = (0.143 * N ).pow(N)
+
+        if ( ans - floor(ans) < 0.5)
+            println(floor(ans).toInt())
+        else
+            println((floor(ans) + 1).toInt())
+    }
+}

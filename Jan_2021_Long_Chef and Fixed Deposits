@@ -1,0 +1,49 @@
+import java.util.*
+import kotlin.collections.ArrayList
+
+fun main( args: Array<String>)
+{
+    val input = Scanner(System.`in`)
+    val testcase = input.nextInt()
+
+    for(start in 1..testcase)
+    {
+        var N = input.nextInt()
+        var X = input.nextInt()
+
+        var list = ArrayList<Int>(N)
+
+        var sum = 0
+        var flag = 0
+        for( i in 0 until N)
+        {
+            list.add(input.nextInt())
+            sum += list[i]
+        }
+        list.sortDescending()
+
+        // All the value are read.
+        var count = 0
+        var store = X
+        for( j in 0 until list.size)
+        {
+            if(list[0] >= X)
+            {
+                count = 1
+                flag= 1
+                break
+            }
+            store = store - list[j]
+            count++
+            if( store <= 0)
+            {
+                flag = 1
+                break
+            }
+        }
+        if(flag == 1)
+            println(count)
+        else
+            println("-1")
+    }
+}

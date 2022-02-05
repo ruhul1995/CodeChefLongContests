@@ -1,0 +1,48 @@
+import java.util.*
+
+fun main( args: Array<String>)
+{
+    val input = Scanner(System.`in`)
+    val testcase = input.nextInt()
+
+    for(start in 1..testcase) {
+        var N = input.nextInt()
+
+        //red = r
+        var r1 = 0
+        var r2 = 0
+        var r3 = 0
+
+        //green = g
+        var g1 = 0
+        var g2 = 0
+        var g3 = 0
+        // blue = b
+        var b1 = 0
+        var b2 = 0
+        var b3 = 0
+
+        var sumUpperTriangle = 0
+        var sumLowerTriangle = 0
+
+        r1 = input.nextInt()
+        g1 = input.nextInt()
+        b1 = input.nextInt()
+
+        r2 = input.nextInt()
+        g2 = input.nextInt()
+        b2 = input.nextInt()
+
+        r3 = input.nextInt()
+        g3 = input.nextInt()
+        b3 = input.nextInt()
+        
+        sumLowerTriangle = r2 + r3 + g3
+        sumUpperTriangle = g1 + b1 + b2
+
+        if(sumLowerTriangle > sumUpperTriangle)
+            println(sumLowerTriangle)
+        else
+            println(sumUpperTriangle)
+    }
+}

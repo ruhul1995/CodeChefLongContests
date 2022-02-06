@@ -1,0 +1,17 @@
+import java.util.*
+
+fun main(args: Array<String>)
+{
+    var input = Scanner(System.`in`)
+    var testcase = input.nextInt()
+
+    for(start in 1..testcase)
+    {
+        var N = input.nextInt()
+        var M = input.nextInt()
+
+        var waitTime = N * M
+
+        println(waitTime)
+    }
+}

@@ -1,0 +1,39 @@
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class Codechef_Feb_2022_NoFix {
+	public static void main(String args[])
+	{
+		Scanner input = new Scanner(System.in);
+		int testcase = input.nextInt();
+		
+		for(int i = 1 ; i <= testcase ; i++)
+		{
+			int N = input.nextInt();
+			ArrayList<Integer> list= new ArrayList<Integer>();
+			//Reading Array
+			for( int j = 0 ; j < N; j++)
+			{
+				list.add(input.nextInt());
+			}
+			
+			int insertValue = 999999;
+			int steps = 0;
+			//System.out.println(list.size());
+			for(int index = 0; index <list.size(); index++)
+			{
+				
+				if((index+1) == list.get(index))
+				{
+					list.add(index, insertValue);
+					steps++;
+				}
+				//System.out.println("Index+1 = " + (index+1));
+				//System.out.println("list.get(index) = " + list.get(index));
+			}
+			
+			System.out.println(steps);
+		}
+	}
+}

@@ -1,0 +1,65 @@
+//Kotlin Code : Learning Purpose Only (Note : If using this code to submit, please use some other language to submit)
+//Developer : Ruhul Amin Choudhury
+//Date : 12th Feb 2022
+//Time : Don't Remember !
+//Solution : Accepted In CodeChef
+import java.util.*
+
+fun main(args:Array<String>)
+{
+    var input = Scanner(System.`in`)
+    var testcase = input.nextInt()
+
+    for(i in 0 until testcase)
+    {
+        var N = input.nextInt()
+        var str = input.next()
+
+        var countZeros = 0
+        var countOnes = 0
+        var len = str.length
+        for( start in str.indices)
+        {
+            if(str[start] == '0')
+            {
+                countZeros++
+            }
+            else
+            {
+                countOnes++
+            }
+        }
+        if( len % 2 != 0)
+        {
+            //len is odd
+            println("YES")
+        }
+        else
+        {
+            //len is even
+            if ((countZeros > countOnes))
+            {
+                //0's >= 1's | Eg: 110000, 0000000011
+                if(countZeros % 2 == 0 && countOnes % 2 == 0)
+                    println("YES")
+                else
+                    println("NO")
+            }
+            else if(countZeros == countOnes)
+            {
+                //0's equals 1's | Eg: 000111, 0000011111
+                println("YES")
+            }
+            else if( countOnes > countZeros)
+            {
+                // 1's > 0's | Eg :111100
+                if(countOnes % 2 == 0 && countZeros % 2 == 0)
+                    println("YES")
+                else
+                    println("NO")
+            }
+            else
+                println("NO")
+        }
+    }
+}

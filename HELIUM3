@@ -1,0 +1,22 @@
+import java.util.*
+
+fun main(args:Array<String>) {
+    var input = Scanner(System.`in`)
+    var testcase = input.nextInt()
+
+    for (i in 1..testcase)
+    {
+        var A = input.nextInt()
+        var B = input.nextInt()
+        var C = input.nextInt()
+        var D = input.nextInt()
+
+        var p = A * B
+        var q = C * D
+
+        if(q >= p)
+            println("YES")
+        else
+            println("NO")
+    }
+}
